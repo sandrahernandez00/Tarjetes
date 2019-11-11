@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tarjetes_flexbox</title>
+    <link href="https://fonts.googleapis.com/css?family=Jomolhari&display=swap" rel="stylesheet">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;    
+        }
+        html{
+            min-height: 100%;
+        }
+        img{
+            width: 100%;
+        }
+        body{
+            background: linear-gradient(38deg,blue,purple);
+            font-family: 'Jomolhari', serif;
+            font-size: 18px;
+            color: purple;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            padding: 2em 4em;
+            justify-content: center;
+        }
+        .dissenyador{
+            width: 25em;
+            margin: 1em;
+            background: rgba(240,240,240,0.9);
+            border-radius: 20px;
+            box-shadow: 0 0 20px purple;
+            display: flex;
+            flex-direction: column;
+        }
+        .dissenyador_img{
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 250px;
+            background: purple;
+        }
+        .dissenyador_img img{
+            border-radius: 20px 20px 0 0;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            mix-blend-mode: lighten;
+        }
+        .dissenyador:first-child .dissenyador_img img{
+            object-position: top;
+        }
+        .dissenyador:last-child .dissenyador_img img{
+            object-position: left;
+        }
+        header{
+            display: flex;
+            padding: 0.5em 1em;
+            justify-content: space-between;
+            border-bottom: 1px solid purple;
+            align-items: baseline;
+        }
+        h3{
+            font-style: normal;
+            font-weight: bold;
+        }
+        span{
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 0.9em;
+        }
+        .dissenyador_contingut{
+            flex-grow: 1;
+            text-align: justify;
+            hyphens: auto;
+            font-size: 0.9em;
+            line-height: 1.4em;
+            margin: 1em 1em 0.5em 1em;
+        }
+        footer{
+            background: purple;
+            color: white;
+            font-size: 0.9em;
+            font-style: italic;
+            border-radius: 0 0 20px 20px;
+            padding: 0.6em;
+        }
+        @media(max-width:600px){
+            body{
+                font-size: 16px; 
+            }
+            .container{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dissenyador">
+           <div class="dissenyador_img">
+               <img src="img/dissenyador_img01.jpg" 
+               alt="Vera Molnar">   
+            </div>
+            <header> 
+                <h3>Michael Bierut</h3>
+                <span>1957</span>
+            </header>
+            <p class="dissenyador_contingut">
+                Bierut nació en Cleveland, Ohio. Estudió diseño gráfico en la Universidad de Cincinnati. 
+                Bierut ha sido vicepresidente de diseño gráfico en Vignelli Asociattes. Desde 1990 ha sido socio en Nueva York de Pentagram. En su biografía online se explica que "ha ganado muchos premios y se exponen sus diseños en algunas colecciones permanentes muy importantes como en es el caso del Museo de Arte Moderno (MoMA) y el Cooper-Hewitt, National Design Museum en Nueva York, la Biblioteca de Congreso en Washington, D.C.; el Museo de San Francisco de Arte Moderno"</p>
+             <footer class="dissenyador_peu">
+               Estudió diseño gráfico en la Facultad de Diseño, Arquitectura, Arte y Planificación (DAAP) de la Universidad de Cincinnati como resultado de estas influencias. Mientras estaba en la escuela, hizo una pasantía para Chris Pullman, medallista de AIGA , en una estación de televisión pública de Boston, WGBH .
+             </footer>
+        </div>
+        <div class="dissenyador">
+          <div class="dissenyador_img">
+           <img src="img/dissenyador_img.jpg" 
+           alt="Casey Reas"> 
+          </div>
+          <header>
+              <h3>Paula Scher</h3>
+              <span>1948</span>
+            </header>
+              <p class="dissenyador_contingut">
+                Es una diseñadora gráfica y artista estadounidense.También fue la primera directora de la diseñadora Pentagram, a la que se unió en 1991.
+                Estudió Bellas Artes en Pensilvania, en la escuela de arte Tyler de Elkins Park. Allí fue alumna de Seymour Chwast, con quien se casó en 1973. Posteriormente se trasladó a Nueva York y se inició en el mundo profesional encargándose de la maquetación de la sección infantil de la editorial Random House. </p>
+                <footer class="dissenyador_peu">
+                  Su siguiente contrato vino dado por la compañía CBS Records,donde fue contratada para trabajar en su departamento de publicidad y promociones, y de ahí pasó a trabajar en Atlantic Records, ejerciendo como directora de arte. Un año después de su marcha, CBS volvió a contratarla también como directora de arte para que se encargara del departamento de portadas. Permaneció durante ocho años, diseñando algunas portadas que se han convertido en iconos de la cultura musical. 
+                </footer>
+        </div>
+    </div>
+</body>
+</html>
